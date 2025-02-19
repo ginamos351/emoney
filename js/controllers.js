@@ -601,7 +601,7 @@ function MainCtrl($window, $scope, $firebaseAuth, $location, $firebaseObject, $t
 					
                                     firebase.auth().onAuthStateChanged((user) => {
                                         let gef = firebase.database().ref("Guest").orderByChild("email").equalTo(searchUser)
-                                        gef.on("child_added", function(snapshot) {
+                                        gef.once("child_added", function(snapshot) {
                                             key = Object.keys(snapshot.val());
 
                                             firebase.auth().onAuthStateChanged((user) => {
