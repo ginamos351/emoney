@@ -599,7 +599,7 @@ function MainCtrl($window, $scope, $firebaseAuth, $location, $firebaseObject, $t
                                     /** reciever Logs **/
                                     
 					
-                                    firebase.auth().onAuthStateChanged((user) => {
+                                
                                         let gef = firebase.database().ref("Guest").orderByChild("email").equalTo(searchUser)
                                         gef.once("child_added", function(snapshot) {
                                             key = Object.keys(snapshot.val());
@@ -616,7 +616,7 @@ function MainCtrl($window, $scope, $firebaseAuth, $location, $firebaseObject, $t
                                             });
                                         });
 
-                                    });
+                                    
 					
                                     alert("successfully sent");
                                     }else{
