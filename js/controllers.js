@@ -604,7 +604,7 @@ function MainCtrl($window, $scope, $firebaseAuth, $location, $firebaseObject, $t
                                         gef.once("child_added", function(snapshot) {
                                             key = Object.keys(snapshot.val());
 
-                                            firebase.auth().onAuthStateChanged((user) => {
+                                        
                                                 firebase.database().ref('Transactions/').push({
                                                     amount: userAmount,
                                                     sendto: sentFrom,
@@ -613,7 +613,7 @@ function MainCtrl($window, $scope, $firebaseAuth, $location, $firebaseObject, $t
                                                     user: snapshot.val().user,
                                                     createdAt: firebase.database.ServerValue.TIMESTAMP
                                                 });
-                                            });
+                                        
                                         });
 
                                     
